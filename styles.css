@@ -1,0 +1,154 @@
+:root {
+  --verde-primary: #198754;
+  --verde-light: #d1e7dd;
+  --verde-dark: #146c43;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    var(--verde-primary) 0%,
+    var(--verde-dark) 100%
+  );
+  min-height: 80vh;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+/* Cards hover effect */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar customization */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Accessibility tools */
+#accessibility-tools {
+  z-index: 1050;
+}
+
+/* High contrast mode */
+.high-contrast {
+  filter: contrast(150%) brightness(120%);
+}
+
+.high-contrast * {
+  border-color: #000 !important;
+}
+
+.high-contrast .text-muted {
+  color: #000 !important;
+}
+
+.high-contrast .bg-light {
+  background-color: #fff !important;
+}
+
+/* Quiz styles */
+.quiz-option {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-option:hover {
+  background-color: var(--verde-light);
+}
+
+.quiz-option.selected {
+  background-color: var(--verde-primary);
+  color: white;
+}
+
+.quiz-option.correct {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.quiz-option.incorrect {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Carousel customization */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 60%;
+}
+
+/* Form styles */
+.form-control:focus {
+  border-color: var(--verde-primary);
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Button animations */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  #accessibility-tools {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Loading animation */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Success messages */
+.alert-success {
+  border-left: 4px solid var(--verde-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--verde-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--verde-dark);
+}

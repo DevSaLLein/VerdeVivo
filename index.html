@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VerdeVivo! - Hortas Urbanas Sustentáveis</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Ferramentas de Acessibilidade -->
+    <div
+      id="accessibility-tools"
+      class="position-fixed bottom-0 end-0 p-3"
+      style="z-index: 1050"
+    >
+      <div class="bg-white rounded-circle shadow p-2 d-flex flex-column gap-2">
+        <button
+          class="btn btn-outline-success btn-sm rounded-circle"
+          onclick="increaseFontSize()"
+          title="Aumentar fonte"
+        >
+          <i class="bi bi-zoom-in"></i>
+        </button>
+        <button
+          class="btn btn-outline-success btn-sm rounded-circle"
+          onclick="decreaseFontSize()"
+          title="Diminuir fonte"
+        >
+          <i class="bi bi-zoom-out"></i>
+        </button>
+        <button
+          class="btn btn-outline-success btn-sm rounded-circle"
+          onclick="toggleHighContrast()"
+          title="Alto contraste"
+        >
+          <i class="bi bi-circle-half"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-success" href="#home">
+          <i class="bi bi-leaf-fill me-2"></i>VerdeVivo!
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#beneficios">Benefícios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tutoriais">Tutoriais</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ferramentas">Ferramentas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#dicas">Dicas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#depoimentos">Depoimentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section bg-success bg-gradient text-white py-5"
+    >
+      <div class="container">
+        <div class="row align-items-center min-vh-75">
+          <div class="col-lg-6">
+            <span class="badge bg-light text-success mb-3"
+              >Sustentabilidade Urbana</span
+            >
+            <h1 class="display-3 fw-bold mb-4">VerdeVivo!</h1>
+            <p class="lead mb-4">
+              Transforme seu espaço urbano em uma horta sustentável. Economize
+              água, reaproveite resíduos e cultive alimentos saudáveis.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <a href="#tutoriais" class="btn btn-light btn-lg">
+                Comece Agora <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+              <a href="#contato" class="btn btn-outline-light btn-lg">
+                Entre em Contato
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-5 mt-lg-0">
+            <img
+              src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
+              alt="Horta vertical urbana sustentável"
+              class="img-fluid rounded shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios Section -->
+    <section id="beneficios" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold text-success mb-3">
+            Benefícios das Hortas Urbanas
+          </h2>
+          <p class="lead text-muted">
+            Descubra como uma pequena horta pode transformar sua vida e o meio
+            ambiente
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-success">
+              <div class="card-body text-center">
+                <div
+                  class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="bi bi-heart-fill text-success fs-2"></i>
+                </div>
+                <h5 class="card-title text-success">Alimentação Saudável</h5>
+                <p class="card-text">
+                  Cultive vegetais orgânicos e frescos, livres de agrotóxicos e
+                  com maior valor nutricional.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-success">
+              <div class="card-body text-center">
+                <div
+                  class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="bi bi-droplet-fill text-success fs-2"></i>
+                </div>
+                <h5 class="card-title text-success">Economia de Água</h5>
+                <p class="card-text">
+                  Sistemas de reaproveitamento de água da chuva podem reduzir em
+                  até 40% o consumo de água potável.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-success">
+              <div class="card-body text-center">
+                <div
+                  class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="bi bi-recycle text-success fs-2"></i>
+                </div>
+                <h5 class="card-title text-success">Redução de Resíduos</h5>
+                <p class="card-text">
+                  Transforme garrafas PET, pneus e outros materiais em vasos e
+                  estruturas para sua horta.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutoriais Section -->
+    <section id="tutoriais" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold text-success mb-3">
+            Tutoriais Práticos
+          </h2>
+          <p class="lead text-muted">
+            Aprenda passo a passo como criar sua horta sustentável
+          </p>
+        </div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-fill mb-4" id="tutorialTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="horta-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#horta"
+              type="button"
+              role="tab"
+            >
+              Horta Vertical
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="agua-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#agua"
+              type="button"
+              role="tab"
+            >
+              Captação de Água
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="compostagem-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#compostagem"
+              type="button"
+              role="tab"
+            >
+              Compostagem
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content" id="tutorialTabContent">
+          <div class="tab-pane fade show active" id="horta" role="tabpanel">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop"
+                      alt="Tutorial de horta vertical"
+                      class="img-fluid rounded"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="text-success mb-3">
+                      Como Montar uma Horta Vertical
+                    </h4>
+                    <ol class="list-group list-group-numbered list-group-flush">
+                      <li class="list-group-item">
+                        Selecione garrafas PET, canos de PVC ou paletes de
+                        madeira
+                      </li>
+                      <li class="list-group-item">
+                        Prepare os recipientes com furos para drenagem
+                      </li>
+                      <li class="list-group-item">
+                        Adicione substrato de qualidade (2/3 terra e 1/3
+                        composto)
+                      </li>
+                      <li class="list-group-item">
+                        Plante mudas adequadas para espaços pequenos
+                      </li>
+                      <li class="list-group-item">
+                        Posicione em local com pelo menos 4 horas de sol diárias
+                      </li>
+                    </ol>
+                    <button class="btn btn-success mt-3">
+                      Ver Tutorial Completo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="agua" role="tabpanel">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1574263867128-a3d5c1b1deaa?w=400&h=250&fit=crop"
+                      alt="Sistema de captação de água da chuva"
+                      class="img-fluid rounded"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="text-success mb-3">
+                      Sistema Simples de Captação de Água
+                    </h4>
+                    <ol class="list-group list-group-numbered list-group-flush">
+                      <li class="list-group-item">
+                        Instale uma calha em uma área de telhado
+                      </li>
+                      <li class="list-group-item">
+                        Conecte a calha a um tubo de PVC
+                      </li>
+                      <li class="list-group-item">
+                        Direcione o tubo para um reservatório (bombona ou caixa
+                        d'água)
+                      </li>
+                      <li class="list-group-item">
+                        Instale um filtro simples para remover folhas e detritos
+                      </li>
+                      <li class="list-group-item">
+                        Adicione uma torneira na parte inferior do reservatório
+                      </li>
+                    </ol>
+                    <button class="btn btn-success mt-3">
+                      Ver Tutorial Completo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="compostagem" role="tabpanel">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop"
+                      alt="Composteira doméstica"
+                      class="img-fluid rounded"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <h4 class="text-success mb-3">Composteira Doméstica</h4>
+                    <ol class="list-group list-group-numbered list-group-flush">
+                      <li class="list-group-item">
+                        Utilize 3 baldes empilháveis (2 para compostagem, 1
+                        coletor)
+                      </li>
+                      <li class="list-group-item">
+                        Faça furos no fundo dos baldes superiores
+                      </li>
+                      <li class="list-group-item">
+                        Adicione uma camada de terra e folhas secas
+                      </li>
+                      <li class="list-group-item">
+                        Deposite resíduos orgânicos e cubra com material seco
+                      </li>
+                      <li class="list-group-item">
+                        Colete o chorume para usar como fertilizante diluído
+                      </li>
+                    </ol>
+                    <button class="btn btn-success mt-3">
+                      Ver Tutorial Completo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ferramentas Interativas Section -->
+    <section id="ferramentas" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold text-success mb-3">
+            Ferramentas Interativas
+          </h2>
+          <p class="lead text-muted">
+            Calcule sua economia e teste seus conhecimentos
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card h-100 border-success">
+              <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Calculadora de Economia de Água</h5>
+              </div>
+              <div class="card-body">
+                <form id="waterCalculator">
+                  <div class="mb-3">
+                    <label for="roofArea" class="form-label"
+                      >Área de captação (telhado) em m²</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="roofArea"
+                      placeholder="Ex: 50"
+                      min="0"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="rainfall" class="form-label"
+                      >Precipitação média mensal (mm)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="rainfall"
+                      placeholder="Ex: 100"
+                      min="0"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-success w-100"
+                    onclick="calculateWater()"
+                  >
+                    Calcular
+                  </button>
+                </form>
+                <div id="waterResult" class="mt-3" style="display: none">
+                  <div class="alert alert-success text-center">
+                    <p class="mb-1">
+                      <strong>Você pode coletar aproximadamente:</strong>
+                    </p>
+                    <h3 class="text-success mb-1" id="waterVolume">0 litros</h3>
+                    <small class="text-muted" id="waterSavings"
+                      >Economia estimada: R$ 0 por mês</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card h-100 border-success">
+              <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Quiz de Sustentabilidade</h5>
+              </div>
+              <div class="card-body">
+                <div id="quizContainer">
+                  <p class="text-muted mb-3">
+                    Questão <span id="questionNumber">1</span> de 3
+                  </p>
+                  <p id="questionText" class="fw-medium mb-3"></p>
+                  <div id="quizOptions" class="mb-3"></div>
+                  <button
+                    id="quizButton"
+                    class="btn btn-success w-100"
+                    onclick="handleQuizAction()"
+                  >
+                    Responder
+                  </button>
+                </div>
+                <div id="quizResult" class="text-center" style="display: none">
+                  <h5 class="text-success mb-3">Quiz Completo!</h5>
+                  <p class="mb-2">Sua pontuação:</p>
+                  <h3 class="text-success mb-3">
+                    <span id="finalScore">0</span> de 3
+                  </h3>
+                  <p class="mb-3" id="scoreMessage"></p>
+                  <button class="btn btn-success" onclick="resetQuiz()">
+                    Tentar Novamente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dicas Rápidas Section -->
+    <section id="dicas" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold text-success mb-3">Dicas Rápidas</h2>
+          <p class="lead text-muted">
+            Pequenas ações que fazem grande diferença
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 border-success text-center">
+              <div class="card-body">
+                <i class="bi bi-flower1 text-success fs-1 mb-3"></i>
+                <h6 class="card-title text-success">Plantas Companheiras</h6>
+                <p class="card-text small">
+                  Plante manjericão junto com tomates para repelir pragas e
+                  melhorar o sabor.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 border-success text-center">
+              <div class="card-body">
+                <i class="bi bi-droplet-fill text-success fs-1 mb-3"></i>
+                <h6 class="card-title text-success">Rega Eficiente</h6>
+                <p class="card-text small">
+                  Regue suas plantas pela manhã ou no fim da tarde para reduzir
+                  a evaporação.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 border-success text-center">
+              <div class="card-body">
+                <i class="bi bi-egg-fill text-success fs-1 mb-3"></i>
+                <h6 class="card-title text-success">Cascas de Ovo</h6>
+                <p class="card-text small">
+                  Triture cascas de ovos e adicione ao solo para fornecer cálcio
+                  às plantas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 border-success text-center">
+              <div class="card-body">
+                <i class="bi bi-leaf-fill text-success fs-1 mb-3"></i>
+                <h6 class="card-title text-success">Cobertura Morta</h6>
+                <p class="card-text small">
+                  Use folhas secas como cobertura para manter a umidade e
+                  controlar ervas daninhas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold text-success mb-3">Depoimentos</h2>
+          <p class="lead text-muted">
+            Histórias de quem já transformou seu espaço
+          </p>
+        </div>
+
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="card border-success">
+                    <div class="card-body text-center p-5">
+                      <img
+                        src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face"
+                        alt="Ana Silva"
+                        class="rounded-circle mb-3"
+                        width="80"
+                        height="80"
+                      />
+                      <blockquote class="blockquote mb-4">
+                        <p>
+                          "Minha horta vertical transformou meu pequeno
+                          apartamento! Economizo cerca de R$ 100 por mês em
+                          verduras e temperos, além de ter o prazer de colher
+                          alimentos frescos e orgânicos."
+                        </p>
+                      </blockquote>
+                      <footer class="blockquote-footer">
+                        <strong class="text-success">Ana Silva</strong>
+                        <cite title="Source Title">São Paulo, SP</cite>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="card border-success">
+                    <div class="card-body text-center p-5">
+                      <img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
+                        alt="Carlos Mendes"
+                        class="rounded-circle mb-3"
+                        width="80"
+                        height="80"
+                      />
+                      <blockquote class="blockquote mb-4">
+                        <p>
+                          "O sistema de captação de água da chuva que montei
+                          seguindo o tutorial do VerdeVivo reduziu minha conta
+                          de água em 30%. Além disso, minhas plantas estão mais
+                          saudáveis com água sem cloro."
+                        </p>
+                      </blockquote>
+                      <footer class="blockquote-footer">
+                        <strong class="text-success">Carlos Mendes</strong>
+                        <cite title="Source Title">Rio de Janeiro, RJ</cite>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="card border-success">
+                    <div class="card-body text-center p-5">
+                      <img
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+                        alt="Mariana Costa"
+                        class="rounded-circle mb-3"
+                        width="80"
+                        height="80"
+                      />
+                      <blockquote class="blockquote mb-4">
+                        <p>
+                          "Comecei com uma pequena horta na varanda e hoje
+                          produzo quase todos os temperos e folhas que consumo.
+                          O mais incrível é ver meus filhos entusiasmados para
+                          cuidar das plantas e colher o que plantamos."
+                        </p>
+                      </blockquote>
+                      <footer class="blockquote-footer">
+                        <strong class="text-success">Mariana Costa</strong>
+                        <cite title="Source Title">Belo Horizonte, MG</cite>
+                      </footer>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-success rounded-circle p-3"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-success rounded-circle p-3"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold text-success mb-3">Entre em Contato</h2>
+          <p class="lead text-muted">
+            Dúvidas, sugestões ou parcerias? Fale conosco!
+          </p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card border-success">
+              <div class="card-body p-4">
+                <form id="contactForm">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="name" class="form-label">Nome</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Seu nome"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="seu@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Assunto</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="subject"
+                      placeholder="Assunto da mensagem"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      rows="5"
+                      placeholder="Digite sua mensagem aqui..."
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">
+                    Enviar Mensagem
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-success text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold mb-3">VerdeVivo!</h5>
+            <p class="opacity-75">
+              Transformando espaços urbanos em áreas produtivas e sustentáveis.
+            </p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold mb-3">Links Rápidos</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#tutoriais" class="text-white-50 text-decoration-none"
+                  >Tutoriais</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#ferramentas"
+                  class="text-white-50 text-decoration-none"
+                  >Ferramentas</a
+                >
+              </li>
+              <li>
+                <a href="#dicas" class="text-white-50 text-decoration-none"
+                  >Dicas</a
+                >
+              </li>
+              <li>
+                <a href="#contato" class="text-white-50 text-decoration-none"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold mb-3">Redes Sociais</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white-50 fs-4"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-white-50 fs-4"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="text-white-50 fs-4"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="text-white-50 fs-4"
+                ><i class="bi bi-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 opacity-25" />
+        <div class="text-center">
+          <p class="mb-0 opacity-75">
+            &copy; 2025 VerdeVivo! Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
