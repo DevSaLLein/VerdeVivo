@@ -19,6 +19,16 @@ html {
   min-height: 80vh;
 }
 
+.hero-section h1 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-section .logo-hero {
+  max-width: 56px;
+}
+
 .min-vh-75 {
   min-height: 75vh;
 }
@@ -36,6 +46,14 @@ html {
 /* Navbar customization */
 .navbar-brand {
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.navbar img {
+  height: 40px;
 }
 
 /* Accessibility tools */
